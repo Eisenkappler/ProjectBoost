@@ -24,15 +24,12 @@ public class ObjectHit : MonoBehaviour
         switch(other.gameObject.tag)
         {
             case "Friendly":
-                Debug.Log("Friendly");
                 break;
 
             case "Finish":
-                Debug.Log("Finish");
                 StartSuccessRoutine();
                 break;
             default:
-                Debug.Log("DEAD");
                 StartFailRoutine();
                 break;
         }
