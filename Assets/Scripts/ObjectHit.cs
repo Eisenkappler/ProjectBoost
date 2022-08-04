@@ -7,6 +7,9 @@ public class ObjectHit : MonoBehaviour
 {
     [SerializeField] AudioClip successSound;
     [SerializeField] AudioClip failSound;
+
+    [SerializeField] ParticleSystem successParticle;
+    [SerializeField] ParticleSystem crashParticles;
     Movement mv;
     AudioSource audiSource;
 
@@ -40,6 +43,7 @@ public class ObjectHit : MonoBehaviour
     void StartFailRoutine()
     {
         isTransitioning = true;
+        crashParticles.Play();
         mv.enabled = false;
         audiSource.Stop();
         audiSource.PlayOneShot(failSound);
@@ -49,6 +53,7 @@ public class ObjectHit : MonoBehaviour
     void StartSuccessRoutine()
     {
         isTransitioning = true;
+        successParticle.Play();
         mv.enabled = false;
         audiSource.Stop();
         audiSource.PlayOneShot(successSound);
