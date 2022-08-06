@@ -13,16 +13,27 @@ public class ObjectHit : MonoBehaviour
     Movement mv;
     AudioSource audiSource;
 
+   
+
     bool isTransitioning = false;
+    bool disableCollision = false;
 
     private void Start() {
         mv = GetComponent<Movement>();
         audiSource = GetComponent<AudioSource>();
+        
     }
+
+    private void Update()
+    {
+        DebugCheatKeys();
+
+    }
+
 
     private void OnCollisionEnter(Collision other) {
         
-        if(isTransitioning){return;}
+        if(isTransitioning || disableCollision){return;}
         
         switch(other.gameObject.tag)
         {
@@ -38,7 +49,18 @@ public class ObjectHit : MonoBehaviour
         }
         
     }
+    private void DebugCheatKeys()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            LoadNextLevel();
+        }
+        else if (Input.GetKeyDown(KeyCode.C))
+        {
 
+           disableCollision = !disableCollision;
+        }
+    }
 
     void StartFailRoutine()
     {
