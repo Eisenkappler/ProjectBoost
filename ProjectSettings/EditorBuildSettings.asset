@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Over.unity
     guid: 0c68af19835d1f14f99368e6c0144017
   - enabled: 1
+    path: Assets/Scenes/Over 3.unity
+    guid: c12bc0289326e0147961186eff9c2f0b
+  - enabled: 1
     path: Assets/Scenes/Under.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/FlappyBird.unity
+    guid: b24b27bdc3701aa44a8f72f7b92b3325
   m_configObjects: {}
